@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+</head>
+<body>
+    <div class="line_1" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500">
+        <h1>
+            Hey Lily, nice to see you here <br><br>
+            Scroll down slowly please
+        </h1>
+    </div>
+    <div class="line_2" data-aos="fade-down" data-aos-duration="2000">
+        <p>
+            Scroll down a bit more
+        </p>
+    </div>
+    <div class="line_3" data-aos="fade-down" data-aos-duration="2000">
+        <p>
+            Just a bit more
+        </p>
+    </div>
+    <div class="line_4" data-aos="zoom-in" data-aos-duration="2000">
+        <p>
+            Almost there!
+        </p>
+    </div>
+    <div class="line_5">
+        <p data-aos="flip-up" data-aos-duration="1000">
+            Tired yet?  <br>
+            Have a drink
+        </p>
+        <img src="asset/drink.gif" alt="Glass of ice water" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="500">
+    </div>
+    <div class="line_6" data-aos="fade-down" data-aos-duration="2000">
+        <p>
+            Haha just kidding, okay it's here
+        </p>
+    </div>
+    <div class="reveal" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200">
+        <button>Here You Go</button>
+        <img src="asset/happy-birthday.gif" alt="Happy birthday gif">
+        <audio src="asset/hb-song.mp3"></audio>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="confetti.js"></script>
+    <script>
+        const btn = document.querySelector('.reveal button');
+        const hbGif = document.querySelector('.reveal img');
+        const song = document.querySelector('.reveal audio');
+
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000);
+        };
+
+        btn.addEventListener('click', () => {
+            btn.style.display = 'none';
+            hbGif.style.display = 'block';
+            song.play();
+            start();
+        })
+    </script>
+
+</body>
+</html>
